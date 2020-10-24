@@ -7,7 +7,7 @@ FROM python:3.8
 # CMD ["python", "identidock.py"]
 
 RUN groupadd -r uwsgi && useradd -r -g uwsgi uwsgi
-RUN pip install Flask uWSGI requests
+RUN pip install Flask uWSGI requests redis
 WORKDIR /app
 COPY app /app
 COPY cmd.sh /
