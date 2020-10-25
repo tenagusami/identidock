@@ -1,10 +1,12 @@
-FROM jenkins:1.609.3
+FROM jenkins:2.60.3
+# FROM jenkins:1.609.3
 USER root
 RUN echo "deb http://apt.dockerproject.org/repo debian-jessie main" \
 > /etc/apt/sources.list.d/docker.list \
 && apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 \
 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D \
 && apt-get update \
+&& apt-get apt-utils \
 && apt-get install -y apt-transport-https \
 && apt-get install -y sudo \
 && apt-get install -y docker-engine \
